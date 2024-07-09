@@ -87,25 +87,41 @@ body {
   .btn:hover {
     opacity: 0.8;
   }
+
+  @media (max-width: 600px) {
+    .calculator {
+      height: calc(100vh - 65%);
+      border: none;
+      border-radius: 0;
+    }
   
-  @media (max-width: 400px) {
+    .display {
+      margin-bottom: 10px;
+    }
+  
+    #display {
+      height: 60px;
+      font-size: 36px;
+    }
+  
+    .buttons {
+      grid-gap: 5px;
+    }
+  
     .btn {
       height: 50px;
-      font-size: 20px;
+      font-size: 24px;
+      border-radius: 25px;
+      margin-bottom: 15px;
     }
   
     .btn.zero {
       border-radius: 25px;
     }
-  
-    #display {
-      height: 50px;
-      font-size: 30px;
-    }
-  
-    .top-display input {
-      height: 20px;
-      font-size: 12px;
+
+    body {
+        background-color: #000;
     }
   }
+  
   
