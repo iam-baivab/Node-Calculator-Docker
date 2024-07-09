@@ -3,16 +3,18 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light background color */
     font-family: Arial, sans-serif;
+    margin: 0;
   }
   
   .calculator {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+    background-color: #000;
+    border: 5px solid #333; /* Border around the calculator */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     padding: 20px;
   }
   
@@ -22,12 +24,15 @@ body {
   
   #display {
     width: 100%;
-    height: 50px;
-    font-size: 24px;
-    padding: 10px;
+    height: 60px;
+    font-size: 36px;
+    color: #fff;
+    background-color: #000;
     border: none;
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    padding-right: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
   }
   
   .buttons {
@@ -38,33 +43,49 @@ body {
   
   .btn {
     width: 100%;
-    height: 50px;
-    font-size: 18px;
+    height: 60px;
+    font-size: 24px;
     border: none;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 30px; /* Rounded buttons */
     cursor: pointer;
     transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn.zero {
+    grid-column: span 2;
+    border-radius: 30px; /* Rounded button */
+  }
+  
+  .function {
+    background-color: #a5a5a5;
+    color: #000;
+  }
+  
+  .operator {
+    background-color: #f09a36;
+    color: #fff;
   }
   
   .btn:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .btn:active {
-    background-color: #e1e1e1;
+    opacity: 0.8;
   }
   
   @media (max-width: 400px) {
-    .calculator {
-      width: 100%;
-      padding: 10px;
+    .btn {
+      height: 50px;
+      font-size: 20px;
     }
   
-    .btn {
-      height: 40px;
-      font-size: 16px;
+    .btn.zero {
+      border-radius: 25px; /* Rounded button */
+    }
+  
+    #display {
+      height: 50px;
+      font-size: 30px;
     }
   }
   
