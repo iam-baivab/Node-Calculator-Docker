@@ -10,6 +10,10 @@ const clearDisplay = () => {
   isNewCalculation = false;
 };
 
+const formatExpression = (expression) => {
+  return expression.replace(/\*/g, '×').replace(/\//g, '÷');
+};
+
 const inputValue = (value) => {
   if (isNewCalculation) {
     clearDisplay();
@@ -18,6 +22,8 @@ const inputValue = (value) => {
   let displayValue = value;
   if (value === '*') {
     displayValue = '×';
+  } else if (value === '/') {
+    displayValue = '÷';
   }
 
   if (value === '.' && currentInput.includes('.')) {
@@ -45,7 +51,7 @@ const inputValue = (value) => {
   }
 
   currentInput += value;
-  display.value = currentInput.replace(/\*/g, '×');
+  display.value = currentInput.replace(/\*/g, '×').replace(/\//g, '÷');
   isNewCalculation = false;
 };
 
@@ -56,7 +62,7 @@ const calculateResult = () => {
     currentInput = result.toString();
     display.value = currentInput;
 
-    topDisplay.value = expression;
+    topDisplay.value = formatExpression(expression);
     isNewCalculation = true;
   } catch (error) {
     display.value = 'Error';
