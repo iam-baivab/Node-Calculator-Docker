@@ -15,6 +15,11 @@ const inputValue = (value) => {
     clearDisplay();
   }
 
+  let displayValue = value;
+  if (value === '*') {
+    displayValue = '×';
+  }
+
   if (value === '.' && currentInput.includes('.')) {
     return;
   }
@@ -40,7 +45,7 @@ const inputValue = (value) => {
   }
 
   currentInput += value;
-  display.value = currentInput;
+  display.value = currentInput.replace(/\*/g, '×');
   isNewCalculation = false;
 };
 
