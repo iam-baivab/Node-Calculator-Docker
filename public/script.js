@@ -1,14 +1,20 @@
 let topDisplay = document.getElementById('topDisplay');
 let display = document.getElementById('display');
 let currentInput = '';
+let isNewCalculation = false;
 
 const clearDisplay = () => {
   currentInput = '';
   display.value = '0';
   topDisplay.value = '';
+  isNewCalculation = false;
 };
 
 const inputValue = (value) => {
+  if (isNewCalculation) {
+    clearDisplay();
+  }
+
   if (value === '.' && currentInput.includes('.')) {
     return;
   }
@@ -35,6 +41,7 @@ const inputValue = (value) => {
 
   currentInput += value;
   display.value = currentInput;
+  isNewCalculation = false;
 };
 
 const calculateResult = () => {
@@ -45,8 +52,10 @@ const calculateResult = () => {
     display.value = currentInput;
 
     topDisplay.value = expression;
+    isNewCalculation = true;
   } catch (error) {
     display.value = 'Error';
+    isNewCalculation = true;
   }
 };
 
