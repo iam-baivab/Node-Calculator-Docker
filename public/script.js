@@ -44,9 +44,28 @@ const calculateResult = () => {
     currentInput = result.toString();
     display.value = currentInput;
 
-    // Display expression and result at the top in smaller size and low opacity
     topDisplay.value = expression;
   } catch (error) {
     display.value = 'Error';
   }
 };
+
+document.addEventListener('keydown', (event) => {
+  const key = event.key;
+  
+  if (!isNaN(key) || key === '.') {
+    inputValue(key);
+  }
+
+  if (key === '/' || key === '*' || key === '-' || key === '+') {
+    inputValue(key);
+  }
+
+  if (key === 'Enter') {
+    calculateResult();
+  }
+
+  if (key === 'Escape') {
+    clearDisplay();
+  }
+});
