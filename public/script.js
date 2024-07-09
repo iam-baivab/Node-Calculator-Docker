@@ -1,9 +1,11 @@
+let topDisplay = document.getElementById('topDisplay');
 let display = document.getElementById('display');
 let currentInput = '';
 
 const clearDisplay = () => {
   currentInput = '';
   display.value = '0';
+  topDisplay.value = '';
 };
 
 const inputValue = (value) => {
@@ -38,8 +40,12 @@ const inputValue = (value) => {
 const calculateResult = () => {
   try {
     const result = new Function('return ' + currentInput)();
+    const expression = currentInput;
     currentInput = result.toString();
     display.value = currentInput;
+
+    // Display expression and result at the top in smaller size and low opacity
+    topDisplay.value = expression;
   } catch (error) {
     display.value = 'Error';
   }

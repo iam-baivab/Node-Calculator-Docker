@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0; /* Light background color */
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
     margin: 0;
   }
@@ -12,10 +12,25 @@ body {
     width: 100%;
     max-width: 400px;
     background-color: #000;
-    border: 5px solid #333; /* Border around the calculator */
+    border: 5px solid #333;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     padding: 20px;
+  }
+  
+  .top-display {
+    margin-bottom: 10px;
+  }
+  
+  .top-display input {
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #000;
+    border: none;
+    text-align: right;
+    padding-right: 10px;
   }
   
   .display {
@@ -80,12 +95,17 @@ body {
     }
   
     .btn.zero {
-      border-radius: 25px; /* Rounded button */
+      border-radius: 25px;
     }
   
     #display {
       height: 50px;
       font-size: 30px;
+    }
+  
+    .top-display input {
+      height: 20px;
+      font-size: 12px;
     }
   }
   
