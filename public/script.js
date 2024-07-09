@@ -88,4 +88,13 @@ document.addEventListener('keydown', (event) => {
   if (key === 'Escape') {
     clearDisplay();
   }
+
+  if (key === 'Backspace') {
+    currentInput = currentInput.slice(0, -1);
+    display.value = currentInput.replace(/\*/g, '×').replace(/\//g, '÷');
+  }
+
+  if (key === 'Delete') {
+    clearDisplay();
+  }
 });
