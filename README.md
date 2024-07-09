@@ -1,4 +1,7 @@
 # Node Calculator
+[![Apache 2.0 License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 This repository hosts a Node.js-based calculator application designed to perform basic arithmetic operations and additional functionalities.
 
 ## View the Docker image on [Docker Hub](https://hub.docker.com/r/baivabsarkar/calculator).
@@ -11,6 +14,13 @@ This repository hosts a Node.js-based calculator application designed to perform
 - **Extended Features**:
   - **Percentage Calculation**: Easily compute percentages of numbers.
   - **Sign Toggle (+/-)**: Change the sign of the current input number.
+
+## UI 🌐 [Live View](https://nodecalculator.vercel.app/)
+### Tablet
+<img src="assets\web.png">
+
+### Mobile
+<img src="assets\mobile.png">
 
 ### Technologies Used
 
@@ -87,3 +97,8 @@ Contributions are welcome! Fork the repository, make improvements, and submit a 
 ## License
 
 This project is licensed under the Apache-2.0 License. See the [LICENSE](LICENSE) file for details.
+
+[license-shield]: https://img.shields.io/badge/License-Apache%202.0-red.svg
+[license-url]: https://github.com/iam-baivab/Node-Calculator-Docker/blob/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat&logo=linkedin&colorB=blue
+[linkedin-url]: https://www.linkedin.com/in/baivabsarkar/
